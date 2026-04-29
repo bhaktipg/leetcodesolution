@@ -1,0 +1,12 @@
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        if n>1 or n<=10:
+            s=str(n)
+            t=0
+            t1=1
+            for i in s:
+                t+=int(i)
+                t1*=int(i)
+            return t1-t
+        else:
+            return 0   
