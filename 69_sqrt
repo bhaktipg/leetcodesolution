@@ -1,0 +1,7 @@
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        
+        if x>=0 and x<=2**31-1:
+            square= x**0.5
+        
+        return int(square)
