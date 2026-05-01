@@ -1,0 +1,13 @@
+class Solution:
+    def addToArrayForm(self, num: List[int], k: int) -> List[int]:
+        n=0
+        g=[]
+
+        for i in num:
+            n=n*10+int(i)
+        sum=n+k
+        while sum>0:
+            g.append(sum%10)
+            sum=sum//10
+
+        return g[::-1]
