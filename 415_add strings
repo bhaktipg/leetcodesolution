@@ -1,0 +1,20 @@
+class Solution:
+    def addStrings(self, num1: str, num2: str) -> str:
+        n=0
+        m=0
+        s=""
+        if len(num1)>=1 and len(num1)<=100000:
+            for j in num1:
+                n=n*10+int(j)
+        if len(num2)>=1 and len(num2)<=100000:
+            for i in num2:
+                m=m*10+int(i)
+        sum=n+m
+        if sum ==0:
+            return chr(48)
+    
+        while sum > 0:
+            digit = sum % 10
+            s = chr(48 + digit) + s
+            sum //= 10
+        return s
