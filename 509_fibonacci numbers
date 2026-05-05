@@ -1,0 +1,16 @@
+class Solution:
+    def fib(self, n: int) -> int:
+        fib={}
+
+        def cal(n):
+            if n<=1:
+                
+                return n
+
+            if n in fib:
+                return fib[n]
+
+            fib[n]= cal(n-1)+cal(n-2)
+            
+            return fib[n]
+        return cal(n)
