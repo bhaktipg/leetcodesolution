@@ -1,0 +1,15 @@
+class Solution:
+    def tribonacci(self, n: int) -> int:
+        t={}
+
+        def tri(k):
+            if k==0:
+                return 0
+            if k==1 or k==2:
+                return 1
+
+            if k in t:
+                return t[k]
+            t[k]=tri(k-1)+tri(k-2)+tri(k-3)
+            return t[k]
+        return tri(n)
