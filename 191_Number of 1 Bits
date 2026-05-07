@@ -1,0 +1,10 @@
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        bits = bin(n)[2:]
+        li=list(bits)
+        a=0
+        for i in li:
+            if i=="1":
+                a=a+1
+        return a
+        
