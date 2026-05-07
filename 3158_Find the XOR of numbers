@@ -1,0 +1,12 @@
+class Solution:
+    def duplicateNumbersXOR(self, nums: List[int]) -> int:
+        mp = {}
+        a=0
+      
+        for x in nums:
+            mp[x] = mp.get(x, 0) + 1
+
+        for k,v in mp.items():
+            if v==2:
+                a=a^k
+        return a
