@@ -1,0 +1,12 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> List[int]:
+        mp={}
+        a=[]
+
+        for x in nums:
+            mp[x]=mp.get(x,0)+1
+
+        for k,v in mp.items():
+            if v==1:
+                a.append(k)
+        return a
