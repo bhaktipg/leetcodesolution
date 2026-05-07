@@ -1,0 +1,11 @@
+class Solution:
+    def repeatedCharacter(self, s: str) -> str:
+        li=list(s)
+        mp={}
+
+        for x in li:
+            mp[x]=mp.get(x,0)+1
+            for k,v in mp.items():
+                if v==2:
+                    return k
+        
