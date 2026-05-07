@@ -1,0 +1,9 @@
+class Solution:
+    def hasAlternatingBits(self, n: int) -> bool:
+        bits=bin(n)[2:]
+        lis=list(bits)
+
+        for i in range(0,len(lis)-1):
+            if lis[i]==lis[i+1]:
+                return False
+        return True
