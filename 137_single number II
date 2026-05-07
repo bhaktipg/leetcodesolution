@@ -1,0 +1,9 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        mp={}
+        for x in nums:
+            mp[x] = mp.get(x, 0) + 1
+
+        for k,v in mp.items():
+            if v!=3:
+                return k
