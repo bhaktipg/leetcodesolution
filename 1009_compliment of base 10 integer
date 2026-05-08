@@ -1,0 +1,14 @@
+class Solution:
+    def bitwiseComplement(self, n: int) -> int:
+        b=bin(n)[2:]
+        l=list(b)
+        print(l)
+        a=[]
+        for i in l:
+            if i=='1':
+                a.append(0)
+            else:
+                a.append(1)
+        binary_string = ''.join(map(str, a))
+        
+        return int(binary_string,2)
