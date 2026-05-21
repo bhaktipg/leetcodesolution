@@ -1,0 +1,9 @@
+class Solution:
+    def separateDigits(self, nums: List[int]) -> List[int]:
+        s2=[]
+
+        for i in range(len(nums)):
+            s=str(nums[i])
+            s1=list(s)
+            s2.extend(int(d) for d in s1)
+        return s2
