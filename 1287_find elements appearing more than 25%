@@ -1,0 +1,9 @@
+class Solution:
+    def findSpecialInteger(self, arr: List[int]) -> int:
+        count = Counter(arr)
+        print(count)
+        n = len(arr)
+
+        for k, v in count.items():
+            if v / n > 0.25:
+                return k
