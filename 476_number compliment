@@ -1,0 +1,13 @@
+class Solution:
+    def findComplement(self, num: int) -> int:
+        b=bin(num)[2:]
+        b1=list(b)
+        a=[]
+
+        for i in range(len(b1)):
+            if b1[i]=='1':
+                a.append(0)
+            else:
+                a.append(1)
+        res="".join(map(str,a))
+        return int(res,2)
