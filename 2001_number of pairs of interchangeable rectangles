@@ -1,0 +1,14 @@
+class Solution:
+    def interchangeableRectangles(self, rectangles: List[List[int]]) -> int:
+        a=[]
+        c=0
+        for i in range(0,len(rectangles)):
+            ratio=rectangles[i][0]/rectangles[i][1]
+            a.append(ratio)
+
+        freq = Counter(a)
+
+        for v in freq.values():
+            c += v * (v - 1) // 2
+
+        return c
