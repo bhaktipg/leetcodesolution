@@ -1,0 +1,12 @@
+class Solution:
+    def smallestNumber(self, n: int) -> int:
+        b=bin(n)[2:]
+        b1=list(b)
+        b2=len(b1)
+        a=[]
+
+        for i in range(b2):
+            a.append(1)
+        res="".join(str(x) for x in a)
+        res1=int(res,2)
+        return res1
