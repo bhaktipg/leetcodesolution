@@ -1,0 +1,10 @@
+class Solution:
+    def minimumFlips(self, n: int) -> int:
+        b=bin(n)[2:]
+        b1=list(b)
+        b2=b1[::-1]
+        c=0
+        for i in range(len(b1)):
+            if b1[i]!=b2[i]:
+                c=c+1
+        return c
