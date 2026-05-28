@@ -1,0 +1,22 @@
+class Solution:
+    def minChanges(self, n: int, k: int) -> int:
+        a=bin(n)[2:]
+        b=bin(k)[2:]
+        a1=len(a)
+        b1=len(b)
+        if a1!=b1:
+            b = b.zfill(len(a))
+        if len(a)<len(b):
+            return -1
+        i=0
+        j=0
+        c=0
+        while i < len(a):
+            if a[i] == '1' and b[j] == '0':
+                c += 1
+
+            elif a[i] == '0' and b[j] == '1':
+                return -1
+            i=i+1
+            j=j+1
+        return c
