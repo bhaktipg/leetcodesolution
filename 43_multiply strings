@@ -1,0 +1,9 @@
+class Solution:
+    def multiply(self, num1: str, num2: str) -> str:
+        a=list(num1)
+        b=list(num2)
+        a1=int("".join(map(str,a)))
+        a2= int("".join(map(str,b)))
+        res=a1*a2
+        return str(res)
+        
