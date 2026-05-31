@@ -1,0 +1,14 @@
+class Solution:
+    def longestPalindrome(self, s: str) -> int:
+        count=Counter(s)
+        l=0
+
+        for fre in count.values():
+            if fre%2==0:
+                l=l+fre
+            else:
+                l=l+fre-1
+        if l<len(s):
+            return l+1
+        else :
+            return l
