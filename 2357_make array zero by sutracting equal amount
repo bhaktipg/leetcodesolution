@@ -1,0 +1,17 @@
+class Solution:
+    def minimumOperations(self, nums: List[int]) -> int:
+        nums=sorted(nums)
+        s=sum(nums)
+        i=0
+        s1=0
+
+        if s==0:
+            return 0
+        
+        while s>0 :
+            a=min(x for x in nums if x != 0)
+            nums=[x - a if x != 0 else 0 for x in nums]
+            s1=sum(nums)
+            i=i+1
+            s=s1
+        return i
