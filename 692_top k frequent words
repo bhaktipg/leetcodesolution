@@ -1,0 +1,11 @@
+class Solution:
+    def topKFrequent(self, words: List[str], k: int) -> List[str]:
+        # Dict
+        c=Counter(words)
+        cc=Counter(dict(sorted(c.items())))
+        # 2d array
+        c1=cc.most_common(k)
+        a=[]
+        for i in range(len(c1)):
+            a.append(c1[i][0])
+        return a
