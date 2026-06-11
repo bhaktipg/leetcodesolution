@@ -1,0 +1,17 @@
+class Solution:
+    def sortByBits(self, arr: List[int]) -> List[int]:
+        b = [bin(x)[2:] for x in arr]
+        a=[]
+        sum=0
+        
+
+        for i in range(len(b)):
+            s=list(b[i])
+            for j in range(len(s)):
+                if b[i][j]=='1':
+                    sum=sum+1
+            a.append((arr[i], sum))
+            sum=0
+        a.sort(key=lambda x: (x[1], x[0]))
+        keys = [x[0] for x in a]
+        return keys
