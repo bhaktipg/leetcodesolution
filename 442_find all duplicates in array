@@ -1,0 +1,9 @@
+class Solution:
+    def findDuplicates(self, nums: List[int]) -> List[int]:
+        count=Counter(nums)
+        a=[]
+
+        for key , value in count:
+            if value==2:
+                a.append(key)
+        return a
