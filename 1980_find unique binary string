@@ -1,0 +1,8 @@
+class Solution:
+    def findDifferentBinaryString(self, nums: List[str]) -> str:
+        n = len(nums)
+        a = set(int(x, 2) for x in nums)
+
+        for i in range(2**n):
+            if i not in a:
+                return bin(i)[2:].zfill(n)
