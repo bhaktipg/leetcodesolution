@@ -1,0 +1,16 @@
+class Solution:
+    def mostFrequentEven(self, nums: List[int]) -> int:
+        c=Counter(nums)
+        a=[]
+        b=[]
+
+        for key,value in c.items():
+            if key%2==0:
+                a.append(value)
+                b.append(key)
+        if not a:
+            return -1
+
+        mx = max(a)
+
+        return min(b[i] for i in range(len(a)) if a[i] == mx)
