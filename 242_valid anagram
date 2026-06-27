@@ -1,0 +1,8 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        count1=Counter(list(s))
+        count2=Counter(list(t))
+        if count1==count2:
+            return True
+        else:
+            return False
