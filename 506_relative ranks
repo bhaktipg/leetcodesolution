@@ -1,0 +1,20 @@
+class Solution:
+    def findRelativeRanks(self, score: List[int]) -> List[str]:
+        a=sorted(score, reverse=True)
+        a1=[]
+    
+
+        for i in range(len(score)):
+            if score[i]==a[0]:
+                a1.append("Gold Medal")
+            
+            elif len(a)>1 and score[i]==a[1]:
+                a1.append("Silver Medal")
+             
+            elif len(a)>1 and score[i]==a[2]:
+                a1.append("Bronze Medal")
+                
+            else:
+                
+                a1.append(str(a.index(score[i]) + 1))
+        return a1
