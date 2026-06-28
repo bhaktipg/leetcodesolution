@@ -1,0 +1,9 @@
+class Solution:
+    def distributeCandies(self, candyType: List[int]) -> int:
+        c=Counter(candyType)
+        n=len(candyType)
+
+        if len(c)==1:
+            return 1
+        elif len(c)>1:
+            return min(len(c),int(n/2))
