@@ -1,0 +1,10 @@
+class Solution:
+    def countSeniors(self, details: List[str]) -> int:
+        a=[]
+        s=0
+        for i in range(len(details)):
+            s=list(details[i])[11:13]
+            s1=int("".join(s))
+            a.append(s1)
+        count = sum(x > 60 for x in a)
+        return count
