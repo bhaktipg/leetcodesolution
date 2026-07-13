@@ -1,0 +1,7 @@
+class Solution:
+    def maxProduct(self, n: int) -> int:
+        s=list(str(n))
+        s1=sorted(s)
+        a=int(s1[-1])
+        b=int(s1[-2])
+        return a*b
