@@ -1,0 +1,9 @@
+class Solution:
+    def digitFrequencyScore(self, n: int) -> int:
+        s=list(str(n))
+        c=Counter(s)
+        a=0
+
+        for key , value in c.items():
+            a=a+int(key)* int(value)
+        return a
