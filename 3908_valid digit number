@@ -1,0 +1,10 @@
+class Solution:
+    def validDigit(self, n: int, x: int) -> bool:
+        s=list(str(n))
+        print(s)
+        print(str(x))
+
+        if str(x)==s[0] or str(x) not in s:
+            return False
+        elif str(x)!=s[0] and str(x) in s:
+            return True
