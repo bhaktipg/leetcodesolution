@@ -1,0 +1,8 @@
+# Write your MySQL query statement below
+SELECT u.user_id, u.email
+from Users u
+where u.email like '%.com'
+and LENGTH(u.email) - LENGTH(REPLACE(u.email, '@', '')) = 1
+and u.email REGEXP '^[A-Za-z0-9]+@'
+and u.email REGEXP '@[A-Za-z]+\\.com$'
+order by u.user_id asc
