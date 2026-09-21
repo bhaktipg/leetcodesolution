@@ -1,0 +1,11 @@
+select id, 'Root' as type
+from Tree t
+where p_id is null
+union all 
+SELECT id,
+    CASE
+        WHEN id not in (SELECT p_id FROM Tree WHERE p_id IS NOT NULL) THEN 'Leaf'
+        ELSE 'Inner'
+    END AS type
+FROM Tree
+where p_id is not null
