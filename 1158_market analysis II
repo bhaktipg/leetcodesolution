@@ -1,0 +1,9 @@
+# Write your MySQL query statement below
+select u.user_id as buyer_id , join_date ,count( CASE
+        WHEN order_date > '2018-12-31'
+         AND order_date < '2020-01-01'
+        THEN 1
+    END) AS orders_in_2019
+from Users u 
+left join Orders o  on o.buyer_id=u.user_id
+group by user_id,join_date
