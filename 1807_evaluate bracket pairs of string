@@ -1,0 +1,17 @@
+class Solution:
+    def evaluate(self, s: str, knowledge: list[list[str]]) -> str:
+        a=dict(knowledge)
+        print(a)
+        res=[]
+        end=-1
+
+        for i in range(len(s)):
+            if s[i]=='(':
+                res=res+list(s[end+1:i])
+                start=i+1
+            if s[i]==')':
+                end=i
+                word=s[start:end]
+                res.append(a.get(word, "?"))
+        res += list(s[end+1:])
+        return "".join(res)
