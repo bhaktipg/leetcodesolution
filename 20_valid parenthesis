@@ -1,0 +1,11 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        p={')':'(', '}':'{',']':'['}
+        stack=[]
+        for ch in s:
+            if ch in '({[':
+                stack.append(ch)
+            elif ch in p:
+                if not stack or stack.pop()!=p[ch]:
+                    return False
+        return not stack 
