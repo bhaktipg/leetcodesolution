@@ -1,0 +1,22 @@
+
+class Solution:
+    def isSubtree(self, root: TreeNode | None, subRoot: TreeNode | None) -> bool:
+        if not subRoot:
+            return None
+        def same(a,b):
+            if not a and not b :
+                return True
+            if not a or not b or a.val!=b.val:
+                return False
+            return same(a.left,b.left) and same(a.right,b.right)
+        
+        q=deque([root])
+        while q:
+            node=q.popleft()
+            if not node:
+                continue
+            if node.val == subRoot.val and same(node, subRoot):
+                return True
+            q.append(node.left)
+            q.append(node.right)
+        return False
