@@ -1,0 +1,17 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def middleNode(self, head: ListNode | None) -> ListNode | None:
+        c=0
+        curr=head
+        while curr:
+            c=c+1
+            curr=curr.next
+        curr = head                  
+        for _ in range(c // 2): 
+            curr = curr.next
+            #print(curr)
+        return curr 
